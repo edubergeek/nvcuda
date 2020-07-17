@@ -29,4 +29,5 @@ _Ubuntu 18.04 images use apt-get_
 _E.g. install python3_
 
 apt-get update && apt-get upgrade -y
+
 apt-get -y install python3 python3-pip

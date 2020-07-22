@@ -29,5 +29,11 @@ ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
 ENV NVIDIA_REQUIRE_CUDA "cuda>=11.0 brand=tesla,driver>=418,driver<419 brand=tesla,driver>=440,driver<441"
 
+RUN apt-get update && apt-get install -y python3 python3-pip && \
+    pip3 install numpy && \
+    pip3 install matplotlib && \
+    pip3 install jupyter
+EXPOSE 8888
+
 COPY root.bashrc /tmp
 RUN cat /tmp/root.bashrc >>/root/.bashrc && rm -f /tmp/root.bashrc
